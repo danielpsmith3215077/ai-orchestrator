@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ app_name }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="shell">
+    <header class="hero">
+      <p class="brand">ORCHESTRATOR</p>
+      <h1>{{ app_name }}</h1>
+      <p class="lede">Cloud memory graph · nightly self-evolution · free API mesh</p>
+      <div class="meta">
+        <span>LLM: <strong id="provider">{{ provider }}</strong></span>
+        <span>Memory: <strong id="memory">{{ memory_backend }}</strong></span>
+      </div>
+    </header>
+
+    <section class="chat" aria-label="Chat">
+      <div id="log" class="log"></div>
+      <form id="form" class="composer">
+        <textarea id="input" rows="2" placeholder="Ask anything. Corrections become core lessons." required></textarea>
+        <div class="actions">
+          <label class="check"><input type="checkbox" id="forceSearch" /> Force web search</label>
+          <button type="submit" id="send">Send</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="foot">
+      <button type="button" id="evolveBtn" class="ghost">Run evolution cycle</button>
+      <a href="/health" target="_blank" rel="noopener">/health</a>
+      <a href="/api/lessons" target="_blank" rel="noopener">/api/lessons</a>
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

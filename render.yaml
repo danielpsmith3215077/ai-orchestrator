@@ -1,0 +1,49 @@
+# Blueprint for a NEW Render Web Service (Docker).
+# Deploy: connect this GitHub repo in Render → New Blueprint / New Web Service.
+services:
+  - type: web
+    name: ai-orchestrator
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: CRON_ENABLED
+        value: "true"
+      - key: EVOLUTION_INTERVAL_HOURS
+        value: "24"
+      - key: LLM_PROVIDER
+        value: auto
+      - key: WEB_SEARCH_ENABLED
+        value: "true"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: HF_API_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false
+
+  # Optional: external cron hitting the always-on web service
+  # (Render free cron availability varies — in-process APScheduler is primary)
+  - type: cron
+    name: ai-orchestrator-evolve
+    runtime: docker
+    plan: free
+    schedule: "0 3 * * *"
+    dockerCommand: >
+      python -c "import urllib.request,os; req=urllib.request.Request(os.environ['PUBLIC_BASE_URL'].rstrip('/')+'/admin/evolve', method='POST', headers={'X-Webhook-Secret': os.environ.get('WEBHOOK_SECRET','')});
+      print(urllib.request.urlopen(req, timeout=120).read().decode())"
+    envVars:
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
