@@ -2,224 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="description"
-      content="Meridian98 helps ambitious teams find clarity, set direction, and build systems that endure."
+      id="seo-crawler-policy"
+      name="robots"
+      content="index,follow"
     />
-    <title>Meridian98 — Direction for what comes next</title>
+    <meta
+      name="description"
+      content="Meridian98 — B2B & SaaS Solutions. The all-in-one cloud software platform built to scale your business."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <title>Meridian98 — Ship enterprise cloud at absolute scale</title>
+    <script>
+      (function () {
+        var meta = document.getElementById("seo-crawler-policy");
+        if (!meta) return;
+        var hash = window.location.hash || "";
+        if (hash.indexOf("#/dashboard") === 0) {
+          meta.setAttribute("content", "noindex,nofollow");
+        } else {
+          meta.setAttribute("content", "index,follow");
+        }
+        window.addEventListener("hashchange", function () {
+          var h = window.location.hash || "";
+          meta.setAttribute(
+            "content",
+            h.indexOf("#/dashboard") === 0 ? "noindex,nofollow" : "index,follow"
+          );
+        });
+      })();
+    </script>
+    <!-- {{ANALYTICS_SCRIPT}} -->
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" data-header>
-      <div class="site-header__inner">
-        <a class="logo" href="#top" aria-label="Meridian98 home">
-          <span class="logo__mark" aria-hidden="true"></span>
-          <span class="logo__text">Meridian98</span>
-        </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="#purpose">Purpose</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#method">Method</a>
-          <a href="#contact" class="nav__cta">Talk with us</a>
-        </nav>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-          data-nav-toggle
-        >
-          <span class="sr-only">Menu</span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
-        <a href="#purpose">Purpose</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#method">Method</a>
-        <a href="#contact">Talk with us</a>
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-brand">
-        <div class="hero__media" data-hero-media>
-          <img
-            src="/hero.jpg"
-            alt="Mountain ridgeline under open sky at dawn"
-            width="2400"
-            height="1600"
-            fetchpriority="high"
-          />
-          <div class="hero__veil" aria-hidden="true"></div>
-          <div class="hero__meridian" aria-hidden="true" data-meridian></div>
-        </div>
-
-        <div class="hero__content">
-          <p class="hero__brand" id="hero-brand">Meridian98</p>
-          <h1 class="hero__headline">
-            Find the line that takes you forward.
-          </h1>
-          <p class="hero__lede">
-            We help ambitious organizations chart clear direction, align teams,
-            and build systems that hold under pressure.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#contact">Start a conversation</a>
-            <a class="btn btn--ghost" href="#purpose">See how we work</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section purpose" id="purpose" data-reveal>
-        <div class="section__inner">
-          <p class="eyebrow">Purpose</p>
-          <h2>A fixed reference in moving work.</h2>
-          <p class="lead">
-            Meridian98 exists for leaders who need more than another framework.
-            We establish a true north—then translate it into decisions, rituals,
-            and operating systems people can actually run.
-          </p>
-        </div>
-      </section>
-
-      <section class="section capabilities" id="capabilities" data-reveal>
-        <div class="section__inner">
-          <p class="eyebrow">Capabilities</p>
-          <h2>Where we create leverage.</h2>
-          <p class="lead">
-            Three focused practices. One continuous outcome: momentum with
-            intention.
-          </p>
-
-          <ol class="capability-list">
-            <li>
-              <h3>Strategic direction</h3>
-              <p>
-                Clarify priorities, market posture, and the few moves that
-                matter this year—then cut the rest.
-              </p>
-            </li>
-            <li>
-              <h3>Operating design</h3>
-              <p>
-                Reshape cadence, ownership, and decision rights so strategy
-                survives contact with the calendar.
-              </p>
-            </li>
-            <li>
-              <h3>Signal systems</h3>
-              <p>
-                Install lightweight measurement and narrative loops so teams
-                see drift early and course-correct together.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section method" id="method" data-reveal>
-        <div class="method__grid">
-          <div class="method__copy">
-            <p class="eyebrow">Method</p>
-            <h2>Diagnose. Align. Embed.</h2>
-            <p class="lead">
-              Engagements are short on theater and long on usable artifacts.
-              We start with what is true, align the people who must act, and
-              leave behind tools that keep working after we leave.
-            </p>
-            <ul class="method__steps">
-              <li>
-                <span>01</span>
-                Map the terrain—constraints, incentives, and hidden friction.
-              </li>
-              <li>
-                <span>02</span>
-                Set the meridian—shared language for success and tradeoffs.
-              </li>
-              <li>
-                <span>03</span>
-                Embed the practice—rituals, owners, and review rhythms.
-              </li>
-            </ul>
-          </div>
-          <figure class="method__visual">
-            <img
-              src="/work.jpg"
-              alt="Modern architecture rising against a clear sky"
-              width="1800"
-              height="1200"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact" data-reveal>
-        <div class="section__inner contact__inner">
-          <p class="eyebrow">Contact</p>
-          <h2>Ready to set your meridian?</h2>
-          <p class="lead">
-            Tell us where you are headed and what is getting in the way. We
-            reply within two business days.
-          </p>
-
-          <form class="contact-form" name="contact" data-contact-form>
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="email">Work email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                required
-              />
-            </div>
-            <div class="field field--full">
-              <label for="message">What are you navigating?</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-            <div class="field field--full contact-form__actions">
-              <button class="btn btn--primary" type="submit">Send message</button>
-              <p class="form-note" data-form-status role="status" aria-live="polite"></p>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        <div>
-          <p class="footer-brand">Meridian98</p>
-          <p class="footer-tag">Direction for what comes next.</p>
-        </div>
-        <div class="footer-meta">
-          <a href="mailto:hello@meridian98.com">hello@meridian98.com</a>
-          <p>&copy; <span data-year></span> Meridian98. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script type="module" src="/src/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,25 +1,38 @@
 # Meridian98 Website
 
-Standalone marketing site for **Meridian98** — a company brand site, separate from the AI orchestrator app in the repository root.
+Premium cinematic single-page marketing site + private hash-routed dashboard for **Meridian98** (B2B / SaaS consulting).
 
 ## Stack
 
-- Vite + vanilla HTML/CSS/JS
-- Google Fonts: Syne (display) + Sora (body)
+- React + Vite
+- Tailwind CSS v4 (`@tailwindcss/vite`)
+- Hash router for `#/dashboard` (password-gated)
 
-## Develop
+## Setup
 
 ```bash
 cd meridian98-website
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-## Build / preview
+## Dashboard access
+
+- Route: `/#/dashboard`
+- Password: `VITE_DASHBOARD_PASSWORD` (see `.env.example`)
+- Fallback for local demos: `meridianAdmin98`
+
+## Scripts
 
 ```bash
+npm run dev
 npm run build
 npm run preview
 ```
 
-Open the printed local URL (default `http://localhost:5173` for dev).
+## Notes
+
+- Public marketing content lives on `/` with smooth-scroll anchors.
+- `robots.txt` and the `#seo-crawler-policy` meta tag keep the dashboard out of indexes.
+- This project is standalone and does not modify the FastAPI orchestrator at the repository root.
