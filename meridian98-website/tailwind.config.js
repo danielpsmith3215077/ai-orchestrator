@@ -4,8 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: "#030712",
-        slateglow: "#f8fafc",
+        midnight: "#1a3d44",
+        slateglow: "#f5f0ed",
+        "m98-bg": "#255059",
+        "m98-bg-deep": "#1a3d44",
+        "m98-bg-elevated": "#2d6469",
+        "m98-cyan": "#078c8c",
+        "m98-coral": "#f27b50",
+        "m98-peach": "#f2ad94",
+        "m98-taupe": "#a6786d",
       },
       fontFamily: {
         sans: [
@@ -28,8 +35,8 @@ export default {
         ],
       },
       boxShadow: {
-        glow: "0 0 40px rgba(99, 102, 241, 0.35)",
-        "glow-teal": "0 0 40px rgba(45, 212, 191, 0.28)",
+        glow: "0 0 40px rgba(7, 140, 140, 0.35)",
+        "glow-teal": "0 0 40px rgba(242, 123, 80, 0.28)",
       },
       animation: {
         "float-slow": "float-slow 12s ease-in-out infinite",

@@ -46,7 +46,7 @@ export default function SubtleParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x * width, p.y * height, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(26, 39, 68, ${p.alpha})`;
+        ctx.fillStyle = `rgba(242, 173, 148, ${p.alpha * 0.85})`;
         ctx.fill();
       });
       frameId = requestAnimationFrame(draw);

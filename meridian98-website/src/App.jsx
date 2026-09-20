@@ -79,12 +79,12 @@ export default function App() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#fafafa] text-slate-900">
+    <div className="relative min-h-screen overflow-x-hidden bg-m98-bg text-m98-heading">
       <MarketingScrollShell />
 
       <header
         className={`sticky top-0 z-50 border-b border-transparent transition-all duration-300 ${
-          scrolled ? "nav-scrolled-light" : "bg-[#fafafa]/60"
+          scrolled ? "nav-scrolled-light" : "bg-m98-bg/70"
         }`}
       >
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
@@ -92,30 +92,30 @@ export default function App() {
             <img
               src="/logo.png"
               alt={`${siteConfig.companyName} logo`}
-              className="h-8 w-8 rounded-lg object-cover ring-1 ring-slate-200"
+              className="h-8 w-8 rounded-lg object-cover ring-1 ring-m98-taupe/40"
             />
             <span className="font-display text-lg font-bold tracking-tight text-navy-950">
               {siteConfig.companyName}
             </span>
           </a>
 
-          <nav className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
-            <a href="#about" className="transition hover:text-navy-950">
+          <nav className="hidden items-center gap-7 text-sm font-medium text-m98-body md:flex">
+            <a href="#about" className="transition hover:text-m98-heading">
               About
             </a>
-            <a href="#why" className="transition hover:text-navy-950">
+            <a href="#why" className="transition hover:text-m98-heading">
               Approach
             </a>
-            <a href="#stack" className="transition hover:text-navy-950">
+            <a href="#stack" className="transition hover:text-m98-heading">
               Stack
             </a>
-            <a href="#projects" className="transition hover:text-navy-950">
+            <a href="#projects" className="transition hover:text-m98-heading">
               Work
             </a>
-            <a href="#team" className="transition hover:text-navy-950">
+            <a href="#team" className="transition hover:text-m98-heading">
               Team
             </a>
-            <a href="#contact" className="transition hover:text-navy-950">
+            <a href="#contact" className="transition hover:text-m98-heading">
               Contact
             </a>
             <a href="#contact" className="btn-primary !px-4 !py-2 text-sm">
@@ -125,22 +125,22 @@ export default function App() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-m98-taupe/35 bg-m98-bg-elevated/70 md:hidden"
             aria-expanded={mobileOpen}
             aria-label="Toggle navigation"
             onClick={() => setMobileOpen((v) => !v)}
           >
             <span className="sr-only">Menu</span>
             <span className="flex flex-col gap-1.5">
-              <span className="block h-0.5 w-4 bg-slate-700" />
-              <span className="block h-0.5 w-4 bg-slate-700" />
+              <span className="block h-0.5 w-4 bg-m98-peach" />
+              <span className="block h-0.5 w-4 bg-m98-peach" />
             </span>
           </button>
         </div>
 
         {mobileOpen ? (
-          <div className="border-t border-slate-200 bg-white/95 px-6 py-4 md:hidden">
-            <div className="flex flex-col gap-3 text-sm font-medium text-slate-700">
+          <div className="border-t border-m98-taupe/30 bg-m98-bg-elevated/95 px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-3 text-sm font-medium text-m98-body">
               {[
                 ["#about", "About"],
                 ["#why", "Approach"],
@@ -153,7 +153,7 @@ export default function App() {
                   key={href}
                   href={href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-2 py-2 hover:bg-slate-50"
+                  className="rounded-lg px-2 py-2 hover:bg-m98-bg/80"
                 >
                   {label}
                 </a>
@@ -184,7 +184,7 @@ export default function App() {
                 <p className="font-display text-sm font-bold tracking-tight text-navy-950">
                   {item.value}
                 </p>
-                <p className="mt-1 text-xs leading-relaxed text-slate-600">{item.label}</p>
+                <p className="mt-1 text-xs leading-relaxed text-m98-body">{item.label}</p>
               </article>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function App() {
                 Consulting built for operators, not slide decks.
               </h2>
             </div>
-            <p className="text-base leading-relaxed text-slate-600">
+            <p className="text-base leading-relaxed text-m98-body">
               Meridian98 embeds with your leadership and engineering teams to make durable
               decisions — then stays through delivery until the system runs the way you
               promised customers it would.
@@ -230,7 +230,7 @@ export default function App() {
                   <h3 className="font-display text-xl font-bold tracking-tight text-navy-950">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.body}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-m98-body">{item.body}</p>
                 </article>
               </ScrollRevealItem>
             ))}
@@ -258,7 +258,7 @@ export default function App() {
                 Platforms we have shipped in production.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-slate-600">
+            <p className="max-w-sm text-sm leading-relaxed text-m98-body">
               A public sample of completed engagements. Active programs remain in the
               operator dashboard.
             </p>
@@ -272,7 +272,7 @@ export default function App() {
                 <article className="case-study-card rounded-[1.75rem] p-6 sm:p-8">
                   <div className="space-y-3">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full border border-slate-200 bg-white px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-slate-600">
+                      <span className="rounded-full border border-m98-taupe/35 bg-m98-bg-elevated/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-m98-muted">
                         {project.tag}
                       </span>
                       <span className="rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider status-past">
@@ -288,7 +288,7 @@ export default function App() {
                       <p className="case-study-client mb-1 uppercase tracking-[0.16em] text-accent-copper">
                         {client.name}
                         {client.industry ? (
-                          <span className="ml-2 font-normal normal-case tracking-normal text-slate-500">
+                          <span className="ml-2 font-normal normal-case tracking-normal text-m98-muted">
                             · {client.industry}
                           </span>
                         ) : null}
@@ -297,7 +297,7 @@ export default function App() {
                     <h3 className="font-display text-2xl font-bold tracking-tight text-navy-950">
                       {project.name}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-m98-body sm:text-base">
                       {project.summary}
                     </p>
                     {project.url ? (
@@ -305,7 +305,7 @@ export default function App() {
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-5 inline-flex text-sm font-semibold text-navy-800 transition hover:text-accent-copper"
+                        className="mt-5 inline-flex text-sm font-semibold link-accent"
                       >
                         View case study →
                       </a>
@@ -335,7 +335,7 @@ export default function App() {
                 key={founder.id}
                 className="light-surface-card rounded-3xl p-7 sm:p-8"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 text-lg font-bold text-navy-800">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-m98-cyan/25 to-m98-coral/20 text-lg font-bold text-m98-peach">
                   {founder.name
                     .split(" ")
                     .map((part) => part[0])
@@ -347,7 +347,7 @@ export default function App() {
                 <p className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-accent-copper">
                   {founder.role}
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">{founder.bio}</p>
+                <p className="mt-4 text-sm leading-relaxed text-m98-body">{founder.bio}</p>
               </article>
             ))}
           </div>
@@ -365,29 +365,29 @@ export default function App() {
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
                   Tell us what you are building next.
                 </h2>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-m98-body sm:text-base">
                   Share context on your platform, timeline, and constraints. We respond with
                   a direct next step — typically a working session, not a generic
                   capabilities deck.
                 </p>
                 <a
                   href={`mailto:${siteConfig.contactEmail}`}
-                  className="mt-6 inline-flex text-sm font-semibold text-navy-800 hover:text-accent-copper"
+                  className="mt-6 inline-flex text-sm font-semibold link-accent"
                 >
                   {siteConfig.contactEmail}
                 </a>
               </div>
 
               <form className="space-y-4" onSubmit={handleContact}>
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-medium text-m98-body">
                   Name
                   <input name="name" required className="input-light" />
                 </label>
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-medium text-m98-body">
                   Work email
                   <input name="email" type="email" required className="input-light" />
                 </label>
-                <label className="block text-sm font-medium text-slate-700">
+                <label className="block text-sm font-medium text-m98-body">
                   What are you scaling?
                   <textarea name="message" rows={4} required className="input-light resize-y" />
                 </label>
@@ -405,7 +405,7 @@ export default function App() {
         </FadeInSection>
       </main>
 
-      <footer className="footer-navy border-t border-slate-800/50">
+      <footer className="footer-navy border-t border-m98-taupe/25">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <img
@@ -415,22 +415,22 @@ export default function App() {
             />
             <div>
               <p className="font-display text-sm font-bold">{siteConfig.companyName}</p>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-m98-muted">
                 B2B cloud consulting · Platform engineering
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-m98-muted">
             <button
               type="button"
               onClick={goDashboard}
-              className="font-medium text-slate-300 transition hover:text-white"
+              className="font-medium text-m98-peach/90 transition hover:text-m98-heading"
             >
               Dashboard
             </button>
             <a
               href={`mailto:${siteConfig.contactEmail}`}
-              className="font-medium text-slate-300 transition hover:text-white"
+              className="font-medium text-m98-peach/90 transition hover:text-m98-heading"
             >
               {siteConfig.contactEmail}
             </a>

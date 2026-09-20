@@ -30,7 +30,7 @@ const steps = [
 function StepVisual({ activeIndex, reduced }) {
   return (
     <div
-      className="relative flex h-full min-h-[280px] items-center justify-center rounded-[1.75rem] border border-slate-200/80 bg-white/75 p-8 shadow-[0_24px_60px_rgba(15,23,42,0.06)] backdrop-blur-md lg:min-h-[420px]"
+      className="relative flex h-full min-h-[280px] items-center justify-center rounded-[1.75rem] border border-m98-taupe/30 bg-m98-bg-elevated/55 p-8 shadow-[0_24px_60px_rgba(0,0,0,0.2)] backdrop-blur-md lg:min-h-[420px]"
       aria-live="polite"
     >
       <div className="absolute inset-0 bg-grid-pattern-light opacity-30" aria-hidden />
@@ -39,7 +39,7 @@ function StepVisual({ activeIndex, reduced }) {
         return (
           <motion.div
             key={step.mark}
-            className="absolute inset-8 flex flex-col justify-end rounded-2xl border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 p-6"
+            className="absolute inset-8 flex flex-col justify-end rounded-2xl border border-m98-taupe/28 bg-gradient-to-br from-m98-bg-elevated/90 to-m98-bg/95 p-6"
             initial={false}
             animate={{
               opacity: active ? 1 : 0,
@@ -56,7 +56,7 @@ function StepVisual({ activeIndex, reduced }) {
             <p className="mt-2 font-display text-2xl font-bold tracking-tight text-navy-950">
               {step.title}
             </p>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">{step.body}</p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-m98-body">{step.body}</p>
           </motion.div>
         );
       })}
@@ -65,7 +65,7 @@ function StepVisual({ activeIndex, reduced }) {
           <span
             key={step.mark}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              index === activeIndex ? "w-8 bg-accent-copper" : "w-3 bg-slate-200"
+              index === activeIndex ? "w-8 bg-m98-coral" : "w-3 bg-m98-taupe/40"
             }`}
           />
         ))}
@@ -96,7 +96,7 @@ export default function StickyApproachSection() {
     <section
       id="why"
       ref={sectionRef}
-      className="relative border-y border-slate-200/80 py-20 sm:py-24"
+      className="relative border-y border-m98-taupe/25 py-20 sm:py-24"
     >
       <SectionBackdrop variant="neutral" />
       <div className="mx-auto w-full max-w-6xl px-6">
@@ -105,7 +105,7 @@ export default function StickyApproachSection() {
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
             The bar for B2B platform work should be written down — and met.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-m98-body">
             We combine the rigor of a top-tier dev shop with editorial clarity: what we will build,
             how we will prove it, and what your team owns on day one after launch.
           </p>
@@ -128,7 +128,7 @@ export default function StickyApproachSection() {
                     <h3 className="font-display text-lg font-bold tracking-tight text-navy-950">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-m98-body">{step.body}</p>
                   </div>
                 </article>
               </ScrollRevealItem>
@@ -141,11 +141,11 @@ export default function StickyApproachSection() {
         </div>
 
         <blockquote className="mt-12 max-w-3xl border-l-2 border-accent-copper pl-6">
-          <p className="text-lg leading-relaxed text-slate-700">
+          <p className="text-lg leading-relaxed text-m98-body">
             “Meridian98 treats platform work like product work — measurable milestones, honest
             tradeoffs, and systems our team could operate without them in the room.”
           </p>
-          <footer className="mt-3 text-sm font-medium text-slate-500">
+          <footer className="mt-3 text-sm font-medium text-m98-muted">
             VP Engineering · Multi-tenant SaaS
           </footer>
         </blockquote>

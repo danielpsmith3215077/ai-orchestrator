@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import LightCinematicHero from "./LightCinematicHero";
+import MoodyBotanicalHero from "./MoodyBotanicalHero";
 
 /**
  * Hero shell that renders either a scroll-scrubbed WebP frame sequence
- * (when `frameSources` is provided) or the procedural LightCinematicHero canvas.
+ * (when `frameSources` is provided) or the procedural MoodyBotanicalHero canvas.
  *
  * To swap in an AI-generated frame loop later, pass:
  *   frameSources={["/frames/0001.webp", ...]}
@@ -90,7 +90,7 @@ export default function ScrollFrameHero({
 
   if (!useFrameScrub) {
     return (
-      <LightCinematicHero siteConfig={siteConfig} onDashboard={onDashboard} />
+      <MoodyBotanicalHero siteConfig={siteConfig} onDashboard={onDashboard} />
     );
   }
 
@@ -103,7 +103,7 @@ export default function ScrollFrameHero({
     >
       <div className="sticky top-16 h-[calc(100svh-4rem)] overflow-hidden">
         <canvas ref={canvasRef} className="hero-canvas h-full w-full" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-[#030712]/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-m98-bg-deep via-transparent to-m98-bg-deep/40" />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export default function TrustedByStrip({ clients = [] }) {
 
   return (
     <FadeInSection className="relative mx-auto w-full max-w-6xl px-6 pb-6 pt-2">
-      <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">
+      <p className="mb-5 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-m98-muted">
         Trusted by teams we have shipped for
       </p>
       <ul className="trusted-by-strip flex flex-wrap items-center justify-center gap-3 sm:gap-4">
@@ -22,7 +22,7 @@ export default function TrustedByStrip({ clients = [] }) {
               ) : (
                 <ClientMonogram name={client.name} className="h-9 w-9 text-[11px]" />
               )}
-              <span className="font-display text-sm font-semibold tracking-tight text-slate-700 transition group-hover:text-navy-950">
+              <span className="font-display text-sm font-semibold tracking-tight text-m98-body transition group-hover:text-m98-heading">
                 {client.name}
               </span>
             </>

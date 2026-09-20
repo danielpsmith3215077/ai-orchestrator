@@ -53,7 +53,7 @@ export default function SectionScrollDots() {
           >
             <span
               className={`text-[10px] font-semibold uppercase tracking-[0.18em] transition-opacity ${
-                active ? "opacity-100 text-navy-800" : "opacity-0 group-hover:opacity-70 text-slate-500"
+                active ? "opacity-100 text-m98-peach" : "opacity-0 group-hover:opacity-70 text-m98-muted"
               }`}
             >
               {label}
@@ -61,15 +61,15 @@ export default function SectionScrollDots() {
             <span
               className={`block rounded-full border transition-all duration-300 ${
                 active
-                  ? "h-2.5 w-2.5 border-accent-copper bg-accent-copper shadow-[0_0_10px_rgba(180,83,9,0.45)]"
-                  : "h-2 w-2 border-slate-300 bg-white/90 group-hover:border-slate-400"
+                  ? "h-2.5 w-2.5 border-m98-coral bg-m98-coral shadow-[0_0_10px_rgba(242,123,80,0.45)]"
+                  : "h-2 w-2 border-m98-taupe/50 bg-m98-bg-elevated/80 group-hover:border-m98-cyan/60"
               }`}
             />
           </a>
         );
       })}
       <motion.div
-        className="pointer-events-none absolute -right-1 top-0 h-full w-px bg-slate-200/80"
+        className="pointer-events-none absolute -right-1 top-0 h-full w-px bg-m98-taupe/35"
         style={{ scaleY: scrollYProgress }}
         aria-hidden
       />

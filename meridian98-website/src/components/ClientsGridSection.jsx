@@ -17,7 +17,7 @@ export default function ClientsGridSection({ clients = [], projectsById = {} }) 
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
           Companies behind the work.
         </h2>
-        <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+        <p className="mt-4 text-sm leading-relaxed text-m98-body sm:text-base">
           Each engagement pairs Meridian98 with an operator team scaling regulated or
           multi-tenant platforms — with outcomes you can reference on the floor, not only
           in a deck.
@@ -40,7 +40,7 @@ export default function ClientsGridSection({ clients = [], projectsById = {} }) 
                   ) : (
                     <ClientMonogram name={client.name} className="h-11 w-11 text-sm" />
                   )}
-                  <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-600">
+                  <span className="rounded-full border border-m98-taupe/35 bg-m98-bg/60 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-m98-muted">
                     {client.industry}
                   </span>
                 </div>
@@ -59,13 +59,13 @@ export default function ClientsGridSection({ clients = [], projectsById = {} }) 
                   )}
                 </h3>
                 {project ? (
-                  <p className="mt-1 text-xs font-medium text-slate-500">
+                  <p className="mt-1 text-xs font-medium text-m98-muted">
                     Project:{" "}
                     <span className="text-navy-800">{project.name}</span>
                   </p>
                 ) : null}
                 {client.testimonial ? (
-                  <blockquote className="mt-4 border-l-2 border-accent-copper/40 pl-3 text-sm leading-relaxed text-slate-600">
+                  <blockquote className="mt-4 border-l-2 border-m98-coral/40 pl-3 text-sm leading-relaxed text-m98-body">
                     “{client.testimonial}”
                   </blockquote>
                 ) : null}

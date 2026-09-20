@@ -6,14 +6,14 @@ import { ScrollRevealItem, ScrollRevealStagger } from "./ScrollReveal";
 function TechBadge({ name, badge }) {
   const label = badge || name.slice(0, 2);
   return (
-    <span className="tech-badge group inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-sm shadow-sm transition hover:border-slate-300 hover:shadow-md">
+    <span className="tech-badge group inline-flex items-center gap-2 rounded-full border border-m98-taupe/35 bg-m98-bg-elevated/70 px-3 py-1.5 text-sm shadow-sm transition hover:border-m98-cyan/45 hover:shadow-md">
       <span
         className="tech-badge-monogram inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-md px-0.5 font-display text-[10px] font-bold tracking-tight text-navy-800"
         aria-hidden
       >
         {label}
       </span>
-      <span className="font-medium text-slate-700 group-hover:text-navy-950">{name}</span>
+      <span className="font-medium text-m98-body group-hover:text-m98-heading">{name}</span>
     </span>
   );
 }
@@ -33,7 +33,7 @@ function TechMarquee({ items = [], reduced }) {
         {track.map((name, index) => (
           <span
             key={`${name}-${index}`}
-            className="tech-marquee-chip shrink-0 rounded-full border border-slate-200/80 bg-white/80 px-4 py-2 font-display text-sm font-semibold tracking-tight text-slate-600 backdrop-blur-sm"
+            className="tech-marquee-chip shrink-0 rounded-full border border-m98-taupe/30 bg-m98-bg-elevated/60 px-4 py-2 font-display text-sm font-semibold tracking-tight text-m98-muted backdrop-blur-sm"
           >
             {name}
           </span>
@@ -60,7 +60,7 @@ export default function TechStackSection({ techStack }) {
           {techStack.title}
         </h2>
         {techStack.subtitle ? (
-          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-m98-body sm:text-base">
             {techStack.subtitle}
           </p>
         ) : null}
