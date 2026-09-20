@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ParallaxLayer from "./ParallaxLayer";
 
-/** Procedural gradient mesh hero using the Meridian98 botanical palette. */
-function useBotanicalCanvas(canvasRef) {
+/** Procedural gradient mesh hero — B2B Trust Blue (InspoAI SaaS palette). */
+function useSaaSHeroCanvas(canvasRef) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return undefined;
@@ -14,10 +14,10 @@ function useBotanicalCanvas(canvasRef) {
     let height = 0;
 
     const blobs = [
-      { x: 0.16, y: 0.28, r: 0.52, color: "7, 140, 140", drift: 0.00022 },
-      { x: 0.84, y: 0.2, r: 0.42, color: "242, 123, 80", drift: -0.00018 },
-      { x: 0.58, y: 0.72, r: 0.46, color: "242, 173, 148", drift: 0.00015 },
-      { x: 0.1, y: 0.65, r: 0.38, color: "7, 140, 140", drift: -0.00012 },
+      { x: 0.14, y: 0.26, r: 0.5, color: "30, 64, 175", drift: 0.0002 },
+      { x: 0.82, y: 0.18, r: 0.4, color: "59, 130, 246", drift: -0.00016 },
+      { x: 0.55, y: 0.7, r: 0.44, color: "245, 158, 11", drift: 0.00014 },
+      { x: 0.08, y: 0.62, r: 0.36, color: "30, 64, 175", drift: -0.00011 },
     ];
 
     const resize = () => {
@@ -33,10 +33,10 @@ function useBotanicalCanvas(canvasRef) {
       const t = time * 0.001;
       ctx.clearRect(0, 0, width, height);
 
-      const base = ctx.createLinearGradient(0, 0, width * 0.4, height);
-      base.addColorStop(0, "#1a3d44");
-      base.addColorStop(0.45, "#255059");
-      base.addColorStop(1, "#1e484f");
+      const base = ctx.createLinearGradient(0, 0, width, height * 0.85);
+      base.addColorStop(0, "#F8FAFC");
+      base.addColorStop(0.5, "#EFF6FF");
+      base.addColorStop(1, "#F1F5F9");
       ctx.fillStyle = base;
       ctx.fillRect(0, 0, width, height);
 
@@ -48,11 +48,11 @@ function useBotanicalCanvas(canvasRef) {
         const radius = blob.r * Math.min(width, height);
 
         const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-        g.addColorStop(0, `rgba(${blob.color}, 0.28)`);
-        g.addColorStop(0.45, `rgba(${blob.color}, 0.1)`);
-        g.addColorStop(1, "rgba(37, 80, 89, 0)");
+        g.addColorStop(0, `rgba(${blob.color}, 0.22)`);
+        g.addColorStop(0.45, `rgba(${blob.color}, 0.08)`);
+        g.addColorStop(1, "rgba(248, 250, 252, 0)");
 
-        ctx.globalCompositeOperation = "screen";
+        ctx.globalCompositeOperation = "multiply";
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(cx, cy, radius, 0, Math.PI * 2);
@@ -61,9 +61,9 @@ function useBotanicalCanvas(canvasRef) {
 
       ctx.globalCompositeOperation = "source-over";
 
-      const wash = ctx.createLinearGradient(0, height * 0.5, 0, height);
-      wash.addColorStop(0, "rgba(37, 80, 89, 0)");
-      wash.addColorStop(1, "rgba(26, 61, 68, 0.75)");
+      const wash = ctx.createLinearGradient(0, height * 0.55, 0, height);
+      wash.addColorStop(0, "rgba(248, 250, 252, 0)");
+      wash.addColorStop(1, "rgba(241, 245, 249, 0.85)");
       ctx.fillStyle = wash;
       ctx.fillRect(0, 0, width, height);
 
@@ -107,10 +107,10 @@ const floatCards = [
   },
 ];
 
-export default function MoodyBotanicalHero({ siteConfig, onDashboard }) {
+export default function SaaSHero({ siteConfig, onDashboard }) {
   const canvasRef = useRef(null);
   const sectionRef = useRef(null);
-  useBotanicalCanvas(canvasRef);
+  useSaaSHeroCanvas(canvasRef);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -124,7 +124,7 @@ export default function MoodyBotanicalHero({ siteConfig, onDashboard }) {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[calc(100svh-4rem)] overflow-hidden border-b border-m98-taupe/25"
+      className="relative min-h-[calc(100svh-4rem)] overflow-hidden border-b border-m98-taupe/80"
       aria-label="Introduction"
     >
       <motion.div
@@ -133,19 +133,19 @@ export default function MoodyBotanicalHero({ siteConfig, onDashboard }) {
       >
         <canvas ref={canvasRef} className="hero-canvas h-full w-full" />
         <motion.div
-          className="absolute inset-0 bg-grid-pattern-dark opacity-[0.35]"
+          className="absolute inset-0 bg-grid-pattern-dark opacity-[0.45]"
           style={{ y: gridY }}
         />
       </motion.div>
 
       <ParallaxLayer
         speed={0.35}
-        className="pointer-events-none absolute -left-[5%] top-[18%] h-56 w-56 rounded-full bg-m98-cyan/20 blur-3xl"
+        className="pointer-events-none absolute -left-[5%] top-[18%] h-56 w-56 rounded-full bg-m98-cyan/15 blur-3xl"
         aria-hidden
       />
       <ParallaxLayer
         speed={-0.2}
-        className="pointer-events-none absolute -right-[4%] bottom-[22%] h-48 w-48 rounded-full bg-m98-coral/25 blur-3xl"
+        className="pointer-events-none absolute -right-[4%] bottom-[22%] h-48 w-48 rounded-full bg-m98-coral/20 blur-3xl"
         aria-hidden
       />
 
@@ -169,7 +169,7 @@ export default function MoodyBotanicalHero({ siteConfig, onDashboard }) {
         className="relative z-10 mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-6xl flex-col justify-center px-6 pb-16 pt-14"
       >
         <motion.p
-          className="text-xs font-semibold uppercase tracking-[0.32em] text-m98-coral"
+          className="text-xs font-semibold uppercase tracking-[0.32em] text-m98-cyan"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -222,7 +222,7 @@ export default function MoodyBotanicalHero({ siteConfig, onDashboard }) {
         </motion.div>
 
         <motion.ul
-          className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-m98-taupe/30 pt-8 text-xs font-semibold uppercase tracking-[0.16em] text-m98-muted"
+          className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-m98-taupe/60 pt-8 text-xs font-semibold uppercase tracking-[0.16em] text-m98-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.38 }}

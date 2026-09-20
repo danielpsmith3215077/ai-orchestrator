@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: "#1a3d44",
-        slateglow: "#f5f0ed",
-        "m98-bg": "#255059",
-        "m98-bg-deep": "#1a3d44",
-        "m98-bg-elevated": "#2d6469",
-        "m98-cyan": "#078c8c",
-        "m98-coral": "#f27b50",
-        "m98-peach": "#f2ad94",
-        "m98-taupe": "#a6786d",
+        midnight: "#0f172a",
+        slateglow: "#f8fafc",
+        "m98-bg": "#f8fafc",
+        "m98-bg-deep": "#0f172a",
+        "m98-bg-elevated": "#ffffff",
+        "m98-cyan": "#1e40af",
+        "m98-coral": "#f59e0b",
+        "m98-peach": "#2563eb",
+        "m98-taupe": "#cbd5e1",
       },
       fontFamily: {
         sans: [
@@ -35,8 +35,8 @@ export default {
         ],
       },
       boxShadow: {
-        glow: "0 0 40px rgba(7, 140, 140, 0.35)",
-        "glow-teal": "0 0 40px rgba(242, 123, 80, 0.28)",
+        glow: "0 0 40px rgba(30, 64, 175, 0.2)",
+        "glow-teal": "0 0 40px rgba(245, 158, 11, 0.22)",
       },
       animation: {
         "float-slow": "float-slow 12s ease-in-out infinite",

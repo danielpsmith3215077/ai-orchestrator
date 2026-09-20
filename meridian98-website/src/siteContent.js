@@ -1,3 +1,23 @@
+/** InspoAI B2B Trust Blue — https://www.inspoai.io/blogs/best-color-palette-for-saas-website */
+export const brandTheme = {
+  name: "B2B Trust Blue",
+  rationale:
+    "InspoAI recommends blue for trust, light slate neutrals for readability, and a contrasting amber accent reserved for CTAs — ideal for enterprise B2B SaaS consulting.",
+  colors: {
+    primary: "#1E40AF",
+    primaryBright: "#2563EB",
+    accent: "#F59E0B",
+    accentHover: "#D97706",
+    background: "#F8FAFC",
+    surface: "#FFFFFF",
+    ink: "#0F172A",
+    body: "#475569",
+    muted: "#64748B",
+    border: "#CBD5E1",
+    footer: "#0F172A",
+  },
+};
+
 export const siteContent = {
   companyName: "Meridian98",
   heroHeadline: "Enterprise cloud systems, designed to hold up under real load.",

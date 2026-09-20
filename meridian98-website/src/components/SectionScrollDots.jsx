@@ -61,7 +61,7 @@ export default function SectionScrollDots() {
             <span
               className={`block rounded-full border transition-all duration-300 ${
                 active
-                  ? "h-2.5 w-2.5 border-m98-coral bg-m98-coral shadow-[0_0_10px_rgba(242,123,80,0.45)]"
+                  ? "h-2.5 w-2.5 border-m98-coral bg-m98-coral shadow-[0_0_10px_rgba(245,158,11,0.45)]"
                   : "h-2 w-2 border-m98-taupe/50 bg-m98-bg-elevated/80 group-hover:border-m98-cyan/60"
               }`}
             />

@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import MoodyBotanicalHero from "./MoodyBotanicalHero";
+import SaaSHero from "./SaaSHero";
 
 /**
  * Hero shell that renders either a scroll-scrubbed WebP frame sequence
- * (when `frameSources` is provided) or the procedural MoodyBotanicalHero canvas.
+ * (when `frameSources` is provided) or the procedural SaaSHero canvas.
  *
  * To swap in an AI-generated frame loop later, pass:
  *   frameSources={["/frames/0001.webp", ...]}
@@ -90,7 +90,7 @@ export default function ScrollFrameHero({
 
   if (!useFrameScrub) {
     return (
-      <MoodyBotanicalHero siteConfig={siteConfig} onDashboard={onDashboard} />
+      <SaaSHero siteConfig={siteConfig} onDashboard={onDashboard} />
     );
   }
 

@@ -424,13 +424,13 @@ export default function App() {
             <button
               type="button"
               onClick={goDashboard}
-              className="font-medium text-m98-peach/90 transition hover:text-m98-heading"
+              className="font-medium text-slate-300 transition hover:text-white"
             >
               Dashboard
             </button>
             <a
               href={`mailto:${siteConfig.contactEmail}`}
-              className="font-medium text-m98-peach/90 transition hover:text-m98-heading"
+              className="font-medium text-slate-300 transition hover:text-white"
             >
               {siteConfig.contactEmail}
             </a>
