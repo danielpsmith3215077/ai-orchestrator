@@ -263,47 +263,64 @@ export default function App() {
               const client = clientById(siteConfig.clients, project.clientRef);
               return (
               <FadeInSection key={project.id} delay={index * 0.06}>
-                <article className="case-study-card rounded-[1.75rem] p-6 sm:p-8">
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full border border-m98-taupe/35 bg-m98-bg-elevated/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-m98-muted">
-                        {project.tag}
-                      </span>
-                      <span className="rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider status-past">
-                        Shipped
-                      </span>
-                    </div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-copper">
-                      Case {String(index + 1).padStart(2, "0")}
-                    </p>
-                  </div>
-                  <div>
-                    {client ? (
-                      <p className="case-study-client mb-1 uppercase tracking-[0.16em] text-accent-copper">
-                        {client.name}
-                        {client.industry ? (
-                          <span className="ml-2 font-normal normal-case tracking-normal text-m98-muted">
-                            · {client.industry}
-                          </span>
-                        ) : null}
+                <article className="case-study-card overflow-hidden rounded-[1.75rem]">
+                  {project.imageUrl ? (
+                    <figure className="relative border-b border-m98-taupe/25 bg-m98-bg">
+                      <img
+                        src={project.imageUrl}
+                        alt=""
+                        className="aspect-[16/9] w-full object-cover object-top"
+                        loading="lazy"
+                      />
+                      {project.imageCaption ? (
+                        <figcaption className="absolute bottom-3 right-3 rounded-md bg-navy-950/70 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/90">
+                          {project.imageCaption}
+                        </figcaption>
+                      ) : null}
+                    </figure>
+                  ) : null}
+                  <div className="grid gap-6 p-6 sm:grid-cols-[auto_1fr] sm:gap-8 sm:p-8">
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="rounded-full border border-m98-taupe/35 bg-m98-bg-elevated/70 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-m98-muted">
+                          {project.tag}
+                        </span>
+                        <span className="rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider status-past">
+                          Shipped
+                        </span>
+                      </div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-accent-copper">
+                        Case {String(index + 1).padStart(2, "0")}
                       </p>
-                    ) : null}
-                    <h3 className="font-display text-2xl font-bold tracking-tight text-navy-950">
-                      {project.name}
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-m98-body sm:text-base">
-                      {project.summary}
-                    </p>
-                    {project.url ? (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-5 inline-flex text-sm font-semibold link-accent"
-                      >
-                        View case study →
-                      </a>
-                    ) : null}
+                    </div>
+                    <div>
+                      {client ? (
+                        <p className="case-study-client mb-1 uppercase tracking-[0.16em] text-accent-copper">
+                          {client.name}
+                          {client.industry ? (
+                            <span className="ml-2 font-normal normal-case tracking-normal text-m98-muted">
+                              · {client.industry}
+                            </span>
+                          ) : null}
+                        </p>
+                      ) : null}
+                      <h3 className="font-display text-2xl font-bold tracking-tight text-navy-950">
+                        {project.name}
+                      </h3>
+                      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-m98-body sm:text-base">
+                        {project.summary}
+                      </p>
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-5 inline-flex text-sm font-semibold link-accent"
+                        >
+                          Visit live site →
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 </article>
               </FadeInSection>
@@ -405,7 +422,7 @@ export default function App() {
             <Meridian98Logo
               variant="dark"
               showTagline
-              markClassName="h-8 w-[2.15rem] shrink-0"
+              markClassName="h-8 w-auto shrink-0"
               className="gap-2.5"
             />
           </div>
