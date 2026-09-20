@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import CinematicHero from "./CinematicHero";
+import LightCinematicHero from "./LightCinematicHero";
 
 /**
  * Hero shell that renders either a scroll-scrubbed WebP frame sequence
- * (when `frameSources` is provided) or the procedural CinematicHero canvas.
+ * (when `frameSources` is provided) or the procedural LightCinematicHero canvas.
  *
  * To swap in an AI-generated frame loop later, pass:
  *   frameSources={["/frames/0001.webp", ...]}
@@ -89,7 +89,9 @@ export default function ScrollFrameHero({
   }, [frameSources, frameCount, useFrameScrub]);
 
   if (!useFrameScrub) {
-    return <CinematicHero siteConfig={siteConfig} onDashboard={onDashboard} />;
+    return (
+      <LightCinematicHero siteConfig={siteConfig} onDashboard={onDashboard} />
+    );
   }
 
   return (
