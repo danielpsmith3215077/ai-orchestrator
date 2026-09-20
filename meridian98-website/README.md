@@ -80,6 +80,16 @@ npm run preview
 npm run lint
 ```
 
+## Deploy (Vercel)
+
+[`vercel.json`](./vercel.json) sets Vite build → `dist` and SPA rewrites to `index.html`.
+
+**GitHub → Vercel (recommended):** Import this repo at [vercel.com/new](https://vercel.com/new), set **Root Directory** to `meridian98-website`, then Deploy. See [MERIDIAN98.md](../MERIDIAN98.md) for the full checklist.
+
+```bash
+npx vercel --prod --yes   # requires vercel login or VERCEL_TOKEN
+```
+
 ## Notes
 
 - Public marketing content lives on `/` with smooth-scroll anchors.
