@@ -3,31 +3,12 @@ import siteContent from "./siteContent";
 import Dashboard from "./components/Dashboard";
 import ScrollFrameHero from "./components/ScrollFrameHero";
 import FadeInSection from "./components/FadeInSection";
+import MarketingScrollShell from "./components/MarketingScrollShell";
+import SectionBackdrop from "./components/SectionBackdrop";
+import StickyApproachSection from "./components/StickyApproachSection";
+import { ScrollRevealItem, ScrollRevealStagger } from "./components/ScrollReveal";
 
 const siteConfig = siteContent;
-
-const pillars = [
-  {
-    title: "Named outcomes",
-    body: "We define success in writing before build — scope, interfaces, and acceptance criteria your exec team can sign.",
-    mark: "01",
-  },
-  {
-    title: "Senior delivery",
-    body: "Principals stay on the thread from architecture through production. No bait-and-switch bench.",
-    mark: "02",
-  },
-  {
-    title: "Platform discipline",
-    body: "Observability, cost, and tenancy are designed in — not bolted on after the first outage.",
-    mark: "03",
-  },
-  {
-    title: "Operator handoff",
-    body: "Runbooks, ownership maps, and documented boundaries so your team inherits clarity, not mystery.",
-    mark: "04",
-  },
-];
 
 function isDashboardHash(hash = window.location.hash) {
   return hash === "#/dashboard" || hash.startsWith("#/dashboard?");
@@ -89,7 +70,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#fafafa] text-slate-900">
-      <div className="pointer-events-none fixed inset-0 bg-grid-pattern-light opacity-40" />
+      <MarketingScrollShell />
 
       <header
         className={`sticky top-0 z-50 border-b border-transparent transition-all duration-300 ${
@@ -175,7 +156,7 @@ export default function App() {
         ) : null}
       </header>
 
-      <main id="top" className="relative">
+      <main id="top" className="relative z-[3]">
         <ScrollFrameHero siteConfig={siteConfig} onDashboard={goDashboard} />
 
         <FadeInSection className="relative mx-auto w-full max-w-6xl px-6 py-10">
@@ -213,7 +194,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <ScrollRevealStagger className="grid gap-5 md:grid-cols-3">
             {[
               {
                 title: "Architecture first",
@@ -227,71 +208,26 @@ export default function App() {
                 title: "Measured scale",
                 body: "Capacity, cost, and compliance stay visible — so growth does not trade away reliability.",
               },
-            ].map((item, index) => (
-              <FadeInSection key={item.title} delay={index * 0.06} className="h-full">
+            ].map((item) => (
+              <ScrollRevealItem key={item.title} className="h-full">
                 <article className="light-surface-card light-surface-card-accent h-full rounded-3xl p-6 sm:p-7">
                   <h3 className="font-display text-xl font-bold tracking-tight text-navy-950">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.body}</p>
                 </article>
-              </FadeInSection>
+              </ScrollRevealItem>
             ))}
-          </div>
+          </ScrollRevealStagger>
         </FadeInSection>
 
-        <FadeInSection
-          id="why"
-          className="relative border-y border-slate-200/80 bg-white/70 py-20 sm:py-24"
-        >
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="mb-12 max-w-2xl">
-              <p className="section-kicker">Why Meridian98</p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
-                The bar for B2B platform work should be written down — and met.
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-600">
-                We combine the rigor of a top-tier dev shop with editorial clarity: what we
-                will build, how we will prove it, and what your team owns on day one after
-                launch.
-              </p>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              {pillars.map((pillar, index) => (
-                <FadeInSection key={pillar.title} delay={index * 0.05}>
-                  <article className="light-surface-card flex h-full gap-4 rounded-3xl p-6 sm:p-7">
-                    <div className="pillar-icon shrink-0">{pillar.mark}</div>
-                    <div>
-                      <h3 className="font-display text-lg font-bold tracking-tight text-navy-950">
-                        {pillar.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                        {pillar.body}
-                      </p>
-                    </div>
-                  </article>
-                </FadeInSection>
-              ))}
-            </div>
-
-            <blockquote className="mt-12 max-w-3xl border-l-2 border-accent-copper pl-6">
-              <p className="text-lg leading-relaxed text-slate-700">
-                “Meridian98 treats platform work like product work — measurable milestones,
-                honest tradeoffs, and systems our team could operate without them in the
-                room.”
-              </p>
-              <footer className="mt-3 text-sm font-medium text-slate-500">
-                VP Engineering · Multi-tenant SaaS
-              </footer>
-            </blockquote>
-          </div>
-        </FadeInSection>
+        <StickyApproachSection />
 
         <FadeInSection
           id="projects"
           className="relative mx-auto w-full max-w-6xl px-6 py-20 sm:py-24"
         >
+          <SectionBackdrop variant="cool" />
           <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-xl">
               <p className="section-kicker">Selected work</p>
@@ -385,6 +321,7 @@ export default function App() {
           id="contact"
           className="relative mx-auto w-full max-w-6xl px-6 py-20 sm:py-24"
         >
+          <SectionBackdrop variant="warm" />
           <div className="contact-panel rounded-[2rem] p-7 sm:p-10 lg:p-12">
             <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
               <div>

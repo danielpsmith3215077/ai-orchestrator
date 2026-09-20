@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ParallaxLayer from "./ParallaxLayer";
 
 function useLightCanvas(canvasRef) {
   useEffect(() => {
@@ -117,6 +118,7 @@ export default function LightCinematicHero({ siteConfig, onDashboard }) {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 64]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const canvasOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, 48]);
 
   return (
     <section
@@ -129,8 +131,22 @@ export default function LightCinematicHero({ siteConfig, onDashboard }) {
         style={{ opacity: canvasOpacity }}
       >
         <canvas ref={canvasRef} className="hero-canvas h-full w-full" />
-        <div className="absolute inset-0 bg-grid-pattern-light opacity-[0.55]" />
+        <motion.div
+          className="absolute inset-0 bg-grid-pattern-light opacity-[0.55]"
+          style={{ y: gridY }}
+        />
       </motion.div>
+
+      <ParallaxLayer
+        speed={0.35}
+        className="pointer-events-none absolute -left-[5%] top-[18%] h-56 w-56 rounded-full bg-navy-800/10 blur-3xl"
+        aria-hidden
+      />
+      <ParallaxLayer
+        speed={-0.2}
+        className="pointer-events-none absolute -right-[4%] bottom-[22%] h-48 w-48 rounded-full bg-accent-copper/15 blur-3xl"
+        aria-hidden
+      />
 
       {floatCards.map((panel) => (
         <motion.div
