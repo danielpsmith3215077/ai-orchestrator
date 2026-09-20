@@ -6,7 +6,7 @@ import { Mark98 } from "./logo/Mark98Paths";
 export default function Meridian98Logo({
   variant = "light",
   showTagline = false,
-  markClassName = "h-9 w-[2.45rem] shrink-0",
+  markClassName = "h-9 w-[2.55rem] shrink-0",
   className = "",
 }) {
   const themeClass = variant === "dark" ? "logo-theme-dark" : "logo-theme-light";

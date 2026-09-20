@@ -88,26 +88,23 @@ function useSaaSHeroCanvas(canvasRef) {
 
 const floatCards = [
   {
-    label: "Architecture",
-    detail: "Boundaries your teams can own",
-    // Anchor in the left gutter (w-52) above the headline — gradient text is transparent, so no overlap.
-    className:
-      "left-[calc((100vw-min(100vw-3rem,72rem))/2-12.25rem)] top-[10%] hidden lg:block",
-    delay: 0.12,
-  },
-  {
     label: "Reliability",
     detail: "SLOs tied to business outcomes",
-    className: "right-[8%] top-[28%] hidden md:block",
-    delay: 0.24,
+    className: "right-[6%] top-[22%] hidden md:block",
+    delay: 0.18,
   },
   {
     label: "Delivery",
     detail: "Milestones with working software",
-    className: "right-[12%] bottom-[28%] hidden lg:block",
-    delay: 0.36,
+    className: "right-[10%] bottom-[26%] hidden lg:block",
+    delay: 0.3,
   },
 ];
+
+const architectureCard = {
+  label: "Architecture",
+  detail: "Boundaries your teams can own",
+};
 
 export default function SaaSHero({ siteConfig, onDashboard }) {
   const canvasRef = useRef(null);
@@ -221,6 +218,24 @@ export default function SaaSHero({ siteConfig, onDashboard }) {
           <button type="button" onClick={onDashboard} className="btn-ghost">
             Operator login
           </button>
+        </motion.div>
+
+        <motion.div
+          className="mt-6 hidden max-w-md sm:block lg:max-w-lg"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="light-float-card inline-flex w-full max-w-xs rounded-2xl px-4 py-3.5 sm:max-w-sm">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-m98-cyan">
+                {architectureCard.label}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-m98-body">
+                {architectureCard.detail}
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.ul
