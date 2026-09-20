@@ -90,7 +90,9 @@ const floatCards = [
   {
     label: "Architecture",
     detail: "Boundaries your teams can own",
-    className: "left-[6%] top-[24%] hidden lg:block",
+    // Sit in the left viewport gutter (above the headline) so gradient headline text stays legible.
+    className:
+      "left-[max(0.75rem,calc((100vw-72rem)/2-13.75rem))] top-[10%] hidden lg:block",
     delay: 0.12,
   },
   {
