@@ -8,6 +8,7 @@ import SectionBackdrop from "./components/SectionBackdrop";
 import StickyApproachSection from "./components/StickyApproachSection";
 import TrustedByStrip from "./components/TrustedByStrip";
 import ClientsGridSection from "./components/ClientsGridSection";
+import TechStackSection from "./components/TechStackSection";
 import { ScrollRevealItem, ScrollRevealStagger } from "./components/ScrollReveal";
 
 const siteConfig = siteContent;
@@ -105,6 +106,9 @@ export default function App() {
             <a href="#why" className="transition hover:text-navy-950">
               Approach
             </a>
+            <a href="#stack" className="transition hover:text-navy-950">
+              Stack
+            </a>
             <a href="#projects" className="transition hover:text-navy-950">
               Work
             </a>
@@ -140,6 +144,7 @@ export default function App() {
               {[
                 ["#about", "About"],
                 ["#why", "Approach"],
+                ["#stack", "Stack"],
                 ["#projects", "Work"],
                 ["#team", "Team"],
                 ["#contact", "Contact"],
@@ -233,6 +238,8 @@ export default function App() {
         </FadeInSection>
 
         <StickyApproachSection />
+
+        <TechStackSection techStack={siteConfig.techStack} />
 
         <ClientsGridSection
           clients={featuredClients}

@@ -322,6 +322,46 @@ body {
   font-style: normal;
 }
 
+.tech-marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@keyframes tech-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee-animate {
+  animation: tech-marquee-scroll 42s linear infinite;
+}
+
+.tech-marquee-chip {
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.tech-badge-monogram {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(
+    145deg,
+    rgba(248, 250, 252, 1) 0%,
+    rgba(226, 232, 240, 0.85) 100%
+  );
+}
+
+.tech-category-card {
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
+}
+
 .case-study-client {
   font-size: 0.8125rem;
   font-weight: 600;
