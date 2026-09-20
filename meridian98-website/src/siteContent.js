@@ -1,9 +1,17 @@
 export const siteContent = {
   companyName: "Meridian98",
+  heroHeadline: "Enterprise cloud systems, designed to hold up under real load.",
   tagline:
-    "B2B & SaaS Solutions — The all-in-one cloud software platform built to scale your business.",
+    "Meridian98 partners with B2B and SaaS teams to architect, modernize, and operate cloud platforms that stay dependable as you grow.",
   supportingText:
-    "We help modern B2B enterprises streamline complex operations, eliminate technological debt, and scale seamlessly using robust, custom-tailored cloud software architectures.",
+    "We bring senior engineering judgment to migrations, platform design, and long-running delivery — so your operators inherit clarity, not another layer of fragility.",
+  primaryCta: "Start a conversation",
+  trustSignals: [
+    "Platform engineering",
+    "FinOps & data",
+    "Regulated B2B",
+    "Multi-tenant SaaS",
+  ],
   contactEmail: "{{CONTACT_EMAIL}}",
   founders: [
     {

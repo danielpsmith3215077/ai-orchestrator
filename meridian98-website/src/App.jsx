@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import siteContent from "./siteContent";
 import Dashboard from "./components/Dashboard";
+import ScrollFrameHero from "./components/ScrollFrameHero";
+import FadeInSection from "./components/FadeInSection";
 
 const siteConfig = siteContent;
 
@@ -64,9 +66,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#030712] text-slate-50">
-      <div className="pointer-events-none fixed inset-0 bg-grid-pattern opacity-[0.35]" />
-      <div className="pointer-events-none fixed -left-32 top-24 h-[28rem] w-[28rem] rounded-full bg-indigo-600/25 blur-3xl animate-glow-orb" />
-      <div className="pointer-events-none fixed -right-24 top-[28rem] h-[26rem] w-[26rem] rounded-full bg-teal-400/20 blur-3xl animate-glow-orb" />
+      <div className="pointer-events-none fixed inset-0 bg-grid-pattern opacity-[0.18]" />
+      <div className="pointer-events-none fixed -left-32 top-24 h-[28rem] w-[28rem] rounded-full bg-indigo-600/20 blur-3xl animate-glow-orb" />
+      <div className="pointer-events-none fixed -right-24 top-[28rem] h-[26rem] w-[26rem] rounded-full bg-teal-400/15 blur-3xl animate-glow-orb" />
 
       <header
         className={`sticky top-0 z-50 border-b border-transparent transition-all duration-300 ${
@@ -102,7 +104,7 @@ export default function App() {
               href="#contact"
               className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 font-semibold text-slate-950 transition hover:brightness-110"
             >
-              Get in Touch
+              {siteConfig.primaryCta}
             </a>
           </nav>
 
@@ -144,7 +146,7 @@ export default function App() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-1 rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-center font-semibold text-slate-950"
               >
-                Get in Touch
+                {siteConfig.primaryCta}
               </a>
             </div>
           </div>
@@ -152,96 +154,71 @@ export default function App() {
       </header>
 
       <main id="top">
-        <section className="relative mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-6xl flex-col justify-center px-6 pb-20 pt-16">
-          <div className="pointer-events-none absolute left-[12%] top-[18%] h-40 w-40 rounded-full bg-indigo-500/40 blur-2xl animate-glow-orb" />
-          <div className="pointer-events-none absolute bottom-[18%] right-[10%] h-44 w-44 rounded-full bg-teal-400/35 blur-2xl animate-float-slow" />
+        <ScrollFrameHero siteConfig={siteConfig} onDashboard={goDashboard} />
 
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-indigo-300">
-            {siteConfig.companyName}
-          </p>
-          <h1 className="mt-5 max-w-4xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-gradient sm:text-5xl md:text-6xl lg:text-7xl">
-            Ship enterprise cloud at absolute scale.
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-            {siteConfig.tagline}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            {siteConfig.supportingText}
-          </p>
-
-          <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#contact"
-              className="rounded-full bg-gradient-to-r from-indigo-500 via-indigo-400 to-teal-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:brightness-110"
-            >
-              Launch Stack
-            </a>
-            <a
-              href="#projects"
-              className="rounded-full border border-slate-600/80 bg-slate-950/40 px-6 py-3 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-teal-300/50 hover:text-white"
-            >
-              Explore Engine
-            </a>
-            <button
-              type="button"
-              onClick={goDashboard}
-              className="rounded-full border border-indigo-400/30 px-5 py-3 text-sm font-medium text-indigo-200 transition hover:border-indigo-300/60 hover:bg-indigo-500/10"
-            >
-              Operator Login
-            </button>
-          </div>
-        </section>
-
-        <section id="about" className="relative mx-auto w-full max-w-6xl px-6 py-24">
+        <FadeInSection
+          id="about"
+          className="relative mx-auto w-full max-w-6xl px-6 py-24"
+        >
           <div className="mb-10 max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-300">
               About
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Built for operators who refuse brittle systems.
+              Consulting built for operators, not slide decks.
             </h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
+              Meridian98 embeds with your leadership and engineering teams to make
+              durable decisions — then stays through delivery until the system runs
+              the way you promised customers it would.
+            </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
             {[
               {
                 title: "Architecture first",
-                body: "We design cloud platforms that absorb complexity instead of exporting it to every team.",
+                body: "We define boundaries, contracts, and migration paths before code spreads across teams.",
               },
               {
-                title: "Debt elimination",
-                body: "Replace fragile glue with durable contracts, telemetry, and clear ownership boundaries.",
+                title: "Reduce structural debt",
+                body: "Retire brittle integrations with observability, ownership, and platforms your staff can extend.",
               },
               {
-                title: "Scale without theater",
-                body: "Ship the operating layer enterprises actually run — resilient, observable, and composable.",
+                title: "Measured scale",
+                body: "Capacity, cost, and compliance stay visible — so growth does not trade away reliability.",
               },
-            ].map((item) => (
-              <article key={item.title} className="cinematic-glow-card rounded-3xl p-6">
-                <h3 className="font-display text-xl font-bold tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                  {item.body}
-                </p>
-              </article>
+            ].map((item, index) => (
+              <FadeInSection key={item.title} delay={index * 0.06} className="h-full">
+                <article className="cinematic-glow-card h-full rounded-3xl p-6">
+                  <h3 className="font-display text-xl font-bold tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                    {item.body}
+                  </p>
+                </article>
+              </FadeInSection>
             ))}
           </div>
-        </section>
+        </FadeInSection>
 
-        <section id="projects" className="relative mx-auto w-full max-w-6xl px-6 py-24">
+        <FadeInSection
+          id="projects"
+          className="relative mx-auto w-full max-w-6xl px-6 py-24"
+        >
           <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-indigo-300">
-                Past Projects
+                Selected work
               </p>
               <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-                Public systems that already shipped.
+                Platforms we have shipped in production.
               </h2>
             </div>
             <p className="max-w-sm text-sm text-slate-400">
-              A curated slice of completed public work. Internal lanes live behind
-              the operator dashboard.
+              A public sample of completed engagements. Active programs and internal
+              lanes remain in the operator dashboard.
             </p>
           </div>
 
@@ -278,15 +255,18 @@ export default function App() {
               </article>
             ))}
           </div>
-        </section>
+        </FadeInSection>
 
-        <section id="team" className="relative mx-auto w-full max-w-6xl px-6 py-24">
+        <FadeInSection
+          id="team"
+          className="relative mx-auto w-full max-w-6xl px-6 py-24"
+        >
           <div className="mb-10 max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-300">
-              Team
+              Leadership
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Founders.
+              Founders who still write and review the work.
             </h2>
           </div>
 
@@ -314,9 +294,12 @@ export default function App() {
               </article>
             ))}
           </div>
-        </section>
+        </FadeInSection>
 
-        <section id="contact" className="relative mx-auto w-full max-w-6xl px-6 py-24">
+        <FadeInSection
+          id="contact"
+          className="relative mx-auto w-full max-w-6xl px-6 py-24"
+        >
           <div className="cinematic-glow-card rounded-[2rem] p-7 sm:p-10">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
@@ -324,11 +307,12 @@ export default function App() {
                   Contact
                 </p>
                 <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-                  Get in Touch
+                  Tell us what you are building next.
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
-                  Tell us where your stack is breaking under load. We reply with a
-                  clear next step — not a generic deck.
+                  Share context on your platform, timeline, and constraints. We
+                  respond with a direct next step — typically a working session, not
+                  a generic capabilities deck.
                 </p>
                 <a
                   href={`mailto:${siteConfig.contactEmail}`}
@@ -370,7 +354,7 @@ export default function App() {
                     type="submit"
                     className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:brightness-110"
                   >
-                    Send message
+                    {siteConfig.primaryCta}
                   </button>
                   <p className="text-sm text-teal-300" role="status">
                     {formStatus}
@@ -379,7 +363,7 @@ export default function App() {
               </form>
             </div>
           </div>
-        </section>
+        </FadeInSection>
       </main>
 
       <footer className="border-t border-slate-800/80">
@@ -393,7 +377,7 @@ export default function App() {
             <div>
               <p className="font-display text-sm font-bold">{siteConfig.companyName}</p>
               <p className="text-xs text-slate-500">
-                B2B & SaaS Solutions · Cloud software at scale
+                B2B cloud consulting · Platform engineering
               </p>
             </div>
           </div>
