@@ -7,6 +7,7 @@
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "vite build",
     "lint": "oxlint",
+    "export:logo": "node scripts/export-logo-assets.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

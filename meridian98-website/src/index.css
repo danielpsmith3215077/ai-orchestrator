@@ -26,6 +26,26 @@
   --color-navy-700: #64748b;
   --color-accent-copper: #f59e0b;
   --color-accent-copper-light: #fbbf24;
+
+  /* Brand logo tokens (alias SaaS palette for SVG + components) */
+  --color-primary: #1e40af;
+  --color-accent: #2563eb;
+}
+
+:root {
+  --logo-mark-light: var(--color-accent);
+  --logo-mark-dark: var(--color-primary);
+  --logo-word-primary: var(--color-m98-heading);
+  --logo-word-accent: var(--color-accent);
+  --logo-tagline: var(--color-m98-muted);
+  --logo-divider: rgba(203, 213, 225, 0.85);
+}
+
+.logo-theme-dark {
+  --logo-word-primary: #f1f5f9;
+  --logo-word-accent: #93c5fd;
+  --logo-tagline: rgba(148, 163, 184, 0.95);
+  --logo-divider: rgba(148, 163, 184, 0.35);
 }
 
 html {

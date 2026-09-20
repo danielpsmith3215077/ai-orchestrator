@@ -10,6 +10,7 @@ import TrustedByStrip from "./components/TrustedByStrip";
 import ClientsGridSection from "./components/ClientsGridSection";
 import TechStackSection from "./components/TechStackSection";
 import { ScrollRevealItem, ScrollRevealStagger } from "./components/ScrollReveal";
+import Meridian98Logo from "./components/Meridian98Logo";
 
 const siteConfig = siteContent;
 
@@ -88,15 +89,8 @@ export default function App() {
         }`}
       >
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
-          <a href="#top" className="flex items-center gap-3 no-underline text-inherit">
-            <img
-              src="/logo.png"
-              alt={`${siteConfig.companyName} logo`}
-              className="h-8 w-8 rounded-lg object-cover ring-1 ring-m98-taupe/40"
-            />
-            <span className="font-display text-lg font-bold tracking-tight text-navy-950">
-              {siteConfig.companyName}
-            </span>
+          <a href="#top" className="no-underline text-inherit">
+            <Meridian98Logo variant="light" />
           </a>
 
           <nav className="hidden items-center gap-7 text-sm font-medium text-m98-body md:flex">
@@ -407,18 +401,13 @@ export default function App() {
 
       <footer className="footer-navy border-t border-m98-taupe/25">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt=""
-              className="h-7 w-7 rounded-md object-cover ring-1 ring-white/10"
+          <div>
+            <Meridian98Logo
+              variant="dark"
+              showTagline
+              markClassName="h-8 w-[2.15rem] shrink-0"
+              className="gap-2.5"
             />
-            <div>
-              <p className="font-display text-sm font-bold">{siteConfig.companyName}</p>
-              <p className="text-xs text-m98-muted">
-                B2B cloud consulting · Platform engineering
-              </p>
-            </div>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-xs text-m98-muted">
             <button
