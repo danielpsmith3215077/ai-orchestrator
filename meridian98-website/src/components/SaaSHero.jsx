@@ -90,9 +90,9 @@ const floatCards = [
   {
     label: "Architecture",
     detail: "Boundaries your teams can own",
-    // Sit in the left viewport gutter (above the headline) so gradient headline text stays legible.
+    // Anchor in the left gutter (w-52) above the headline — gradient text is transparent, so no overlap.
     className:
-      "left-[max(0.75rem,calc((100vw-72rem)/2-13.75rem))] top-[10%] hidden lg:block",
+      "left-[calc((100vw-min(100vw-3rem,72rem))/2-13.75rem)] top-[10%] hidden lg:block",
     delay: 0.12,
   },
   {
