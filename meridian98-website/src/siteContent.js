@@ -27,10 +27,50 @@ export const siteContent = {
       bio: "{{BIO}}",
     },
   ],
+  /*
+   * CLIENT COMPANIES — replace placeholders with real customer names.
+   * - Drop SVG/PNG logos into `public/logos/` (e.g. `public/logos/acme-corp.svg`).
+   * - Set `logoUrl` to `/logos/your-file.svg` (omit to show a monogram from the name).
+   * - `projectRef` must match a `projects[].id` with visibility "public".
+   * - Optional: `website`, `testimonial` (short quote for the client grid).
+   */
+  clients: [
+    {
+      id: "enterprise-client-a",
+      name: "Enterprise Client A",
+      logoUrl: "",
+      industry: "FinTech · B2B",
+      projectRef: "atlas-ledger",
+      website: "",
+      testimonial:
+        "Meridian98 delivered a consolidation platform our finance team could run without daily engineering support.",
+    },
+    {
+      id: "enterprise-client-b",
+      name: "Enterprise Client B",
+      logoUrl: "",
+      industry: "Cloud SaaS",
+      projectRef: "nimbus-ops",
+      website: "",
+      testimonial:
+        "They unified incidents, deploys, and cost signals into one control plane our SRE org actually adopted.",
+    },
+    {
+      id: "enterprise-client-c",
+      name: "Enterprise Client C",
+      logoUrl: "",
+      industry: "Product-led B2B",
+      projectRef: "signal-forge",
+      website: "",
+      testimonial:
+        "The telemetry pipeline now feeds revenue workflows — not another dashboard nobody opens.",
+    },
+  ],
   projects: [
     {
       id: "atlas-ledger",
       name: "Atlas Ledger",
+      clientRef: "enterprise-client-a",
       summary:
         "Multi-entity financial consolidation platform for mid-market B2B operators.",
       tag: "FinOps",
@@ -41,6 +81,7 @@ export const siteContent = {
     {
       id: "nimbus-ops",
       name: "Nimbus Ops",
+      clientRef: "enterprise-client-b",
       summary:
         "Cloud operations control plane unifying incidents, deploys, and cost signals.",
       tag: "DevOps",
@@ -51,6 +92,7 @@ export const siteContent = {
     {
       id: "signal-forge",
       name: "Signal Forge",
+      clientRef: "enterprise-client-c",
       summary:
         "Customer telemetry pipeline that turns product events into revenue workflows.",
       tag: "Data",
@@ -100,5 +142,21 @@ export const siteContent = {
     },
   ],
 };
+
+/** @param {typeof siteContent.clients} clients */
+export function clientById(clients, id) {
+  if (!id) return undefined;
+  return clients.find((c) => c.id === id);
+}
+
+/** Clients linked to public-facing shipped work */
+export function publicClients(site = siteContent) {
+  const publicProjectIds = new Set(
+    site.projects
+      .filter((p) => p.visibility === "public" && p.status === "past")
+      .map((p) => p.id)
+  );
+  return site.clients.filter((c) => publicProjectIds.has(c.projectRef));
+}
 
 export default siteContent;

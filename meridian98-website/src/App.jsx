@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-import siteContent from "./siteContent";
+import siteContent, { clientById, publicClients } from "./siteContent";
 import Dashboard from "./components/Dashboard";
 import ScrollFrameHero from "./components/ScrollFrameHero";
 import FadeInSection from "./components/FadeInSection";
 import MarketingScrollShell from "./components/MarketingScrollShell";
 import SectionBackdrop from "./components/SectionBackdrop";
 import StickyApproachSection from "./components/StickyApproachSection";
+import TrustedByStrip from "./components/TrustedByStrip";
+import ClientsGridSection from "./components/ClientsGridSection";
 import { ScrollRevealItem, ScrollRevealStagger } from "./components/ScrollReveal";
 
 const siteConfig = siteContent;
@@ -27,6 +29,13 @@ export default function App() {
       siteConfig.projects.filter(
         (project) => project.visibility === "public" && project.status === "past"
       ),
+    []
+  );
+
+  const featuredClients = useMemo(() => publicClients(siteConfig), []);
+
+  const projectsById = useMemo(
+    () => Object.fromEntries(siteConfig.projects.map((p) => [p.id, p])),
     []
   );
 
@@ -176,6 +185,8 @@ export default function App() {
           </div>
         </FadeInSection>
 
+        <TrustedByStrip clients={featuredClients} />
+
         <FadeInSection
           id="about"
           className="relative mx-auto w-full max-w-6xl px-6 py-20 sm:py-24"
@@ -223,6 +234,11 @@ export default function App() {
 
         <StickyApproachSection />
 
+        <ClientsGridSection
+          clients={featuredClients}
+          projectsById={projectsById}
+        />
+
         <FadeInSection
           id="projects"
           className="relative mx-auto w-full max-w-6xl px-6 py-20 sm:py-24"
@@ -242,7 +258,9 @@ export default function App() {
           </div>
 
           <div className="flex flex-col gap-6">
-            {publicProjects.map((project, index) => (
+            {publicProjects.map((project, index) => {
+              const client = clientById(siteConfig.clients, project.clientRef);
+              return (
               <FadeInSection key={project.id} delay={index * 0.06}>
                 <article className="case-study-card rounded-[1.75rem] p-6 sm:p-8">
                   <div className="space-y-3">
@@ -259,6 +277,16 @@ export default function App() {
                     </p>
                   </div>
                   <div>
+                    {client ? (
+                      <p className="case-study-client mb-1 uppercase tracking-[0.16em] text-accent-copper">
+                        {client.name}
+                        {client.industry ? (
+                          <span className="ml-2 font-normal normal-case tracking-normal text-slate-500">
+                            · {client.industry}
+                          </span>
+                        ) : null}
+                      </p>
+                    ) : null}
                     <h3 className="font-display text-2xl font-bold tracking-tight text-navy-950">
                       {project.name}
                     </h3>
@@ -278,7 +306,8 @@ export default function App() {
                   </div>
                 </article>
               </FadeInSection>
-            ))}
+            );
+            })}
           </div>
         </FadeInSection>
 
