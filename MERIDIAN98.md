@@ -2,6 +2,8 @@
 
 The **Meridian98** site is **not** the Python FastAPI app at the repository root.
 
+**Standalone project — deploy as its own Vercel project; do not combine with the orchestrator or other apps.**
+
 It lives in:
 
 ```text
