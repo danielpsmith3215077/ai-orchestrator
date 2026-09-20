@@ -96,7 +96,7 @@ const floatCards = [
   {
     label: "Delivery",
     detail: "Milestones with working software",
-    className: "right-[10%] bottom-[26%] hidden lg:block",
+    className: "right-[5%] bottom-[14%] hidden xl:block",
     delay: 0.3,
   },
 ];
@@ -204,42 +204,34 @@ export default function SaaSHero({ siteConfig, onDashboard }) {
         </motion.p>
 
         <motion.div
-          className="mt-9 flex flex-wrap items-center gap-3"
+          className="mt-9 flex flex-col gap-5 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-6 lg:gap-y-4"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a href="#contact" className="btn-primary">
-            {siteConfig.primaryCta}
-          </a>
-          <a href="#projects" className="btn-secondary">
-            Selected work
-          </a>
-          <button type="button" onClick={onDashboard} className="btn-ghost">
-            Operator login
-          </button>
-        </motion.div>
-
-        <motion.div
-          className="mt-6 hidden max-w-md sm:block lg:max-w-lg"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="light-float-card inline-flex w-full max-w-xs rounded-2xl px-4 py-3.5 sm:max-w-sm">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-m98-cyan">
-                {architectureCard.label}
-              </p>
-              <p className="mt-1 text-xs leading-relaxed text-m98-body">
-                {architectureCard.detail}
-              </p>
-            </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <a href="#contact" className="btn-primary">
+              {siteConfig.primaryCta}
+            </a>
+            <a href="#projects" className="btn-secondary">
+              Selected work
+            </a>
+            <button type="button" onClick={onDashboard} className="btn-ghost">
+              Operator login
+            </button>
+          </div>
+          <div className="light-float-card w-full max-w-xs rounded-2xl px-4 py-3.5 sm:max-w-sm lg:w-52 lg:shrink-0">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-m98-cyan">
+              {architectureCard.label}
+            </p>
+            <p className="mt-1 text-xs leading-relaxed text-m98-body">
+              {architectureCard.detail}
+            </p>
           </div>
         </motion.div>
 
         <motion.ul
-          className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-m98-taupe/60 pt-8 text-xs font-semibold uppercase tracking-[0.16em] text-m98-muted"
+          className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-m98-taupe/60 pt-8 text-xs font-semibold uppercase tracking-[0.16em] text-m98-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.38 }}
