@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Private dashboard routes — never index
+Disallow: /dashboard
+Disallow: /#/dashboard
+Disallow: /*#/dashboard

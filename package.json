@@ -1,0 +1,8 @@
+{
+  "name": "ai-orchestrator",
+  "private": true,
+  "description": "Python FastAPI orchestrator (root). Meridian98 marketing site lives in meridian98-website/.",
+  "scripts": {
+    "dev:meridian98": "npm run dev --prefix meridian98-website"
+  }
+}

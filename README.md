@@ -19,6 +19,7 @@ Cloud-hosted cognitive orchestrator with a **vector memory graph**, **DuckDuckGo
 | `sql/001_pgvector_schema.sql` | Supabase schema + `match_memory_nodes` RPC |
 | `Dockerfile` | Multi-stage, memory-safe image |
 | `render.yaml` | Render blueprint |
+| `meridian98-website/` | Meridian98 marketing site (Vite + React) — see [MERIDIAN98.md](./MERIDIAN98.md) |
 
 ## Quick start (local)
 
